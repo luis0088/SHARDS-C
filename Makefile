@@ -17,7 +17,7 @@ dist: dist.c
 obj/SHARDS.o : src/SHARDS.c ./include/SHARDS.h
 	$(CC) -g -c  $(CFLAGS) $(LFLAGS)  src/SHARDS.c -o $@
 
-lib/libshardsc.a: obj/SHARDS.o
+lib/libshardsc.a: obj/SHARDS.o obj/splay.o obj/murmurhash3.o
 	$(AR) $(ARFLAGS) $@ $^ 
 	
 obj/splay.o: src/splay.c include/splay.h
